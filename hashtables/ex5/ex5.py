@@ -1,13 +1,17 @@
 # Your code here
 
 
-
 def finder(files, queries):
     """
     YOUR CODE HERE
     """
-    # Your code here
-
+    result = []
+    queries_dic = {}
+    for query in queries:
+        queries_dic[query] = query
+    for file in files:
+        if file[file.rfind('/') + 1:] in queries_dic:
+            result.append(file)
     return result
 
 
