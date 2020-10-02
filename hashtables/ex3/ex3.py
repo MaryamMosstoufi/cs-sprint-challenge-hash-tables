@@ -2,8 +2,26 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
-
+    dic = {}
+    result = []
+    for index in range(len(arrays)):
+        for item in arrays[index]:
+            if item in dic:
+                dic[item].append(index)
+            else:
+                dic[item] = [index]
+    for item in dic:
+        if len(dic[item]) == len(arrays):
+            result.append(item)
+    # this solution took too long
+    # for i in arrays[0]:
+    #     searching = True
+    #     while searching:
+    #         for j in range(1, len(arrays)):
+    #             if i not in arrays[j]:
+    #                 searching = False
+    #         result.append(i)
+    #         searching = False
     return result
 
 
